@@ -2,6 +2,9 @@ name: Build LUNA Authentik image
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - luna-invite-flow-shell
 
 permissions:
   contents: read
