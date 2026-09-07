@@ -1,0 +1,152 @@
+:host {
+    display: block;
+    min-height: 100dvh;
+    color: #151515;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    --pf-global--primary-color--100: #151515;
+    --pf-global--primary-color--200: #151515;
+    --pf-global--link--Color: #151515;
+    --pf-global--link--Color--hover: #151515;
+    --pf-c-button--m-primary--BackgroundColor: #ff5ea8;
+    --pf-c-button--m-primary--Color: #151515;
+    --pf-c-button--m-primary--BorderColor: #151515;
+    --pf-c-button--m-primary--hover--BackgroundColor: #ff86bb;
+    --pf-c-form-control--BorderTopColor: #151515;
+    --pf-c-form-control--BorderRightColor: #151515;
+    --pf-c-form-control--BorderBottomColor: #151515;
+    --pf-c-form-control--BorderLeftColor: #151515;
+}
+
+.luna-shell {
+    display: grid;
+    grid-template-columns: minmax(20rem, 43%) 1fr;
+    min-height: 100dvh;
+    background: #fff8ed;
+    position: relative;
+}
+
+.luna-art {
+    overflow: hidden;
+    position: relative;
+    padding: clamp(1.5rem, 4vw, 4rem);
+    background: #ffd600;
+    isolation: isolate;
+}
+
+.luna-art::before,
+.luna-art::after {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.luna-art::before {
+    width: min(42vw, 38rem);
+    aspect-ratio: 1;
+    right: -18%;
+    bottom: -16%;
+    background: #00e2d5;
+    border: 0.8rem solid #151515;
+}
+
+.luna-art::after {
+    width: 9rem;
+    aspect-ratio: 1;
+    top: 24%;
+    left: 12%;
+    background: #ff5ea8;
+    border: 0.45rem solid #151515;
+    box-shadow: 0.85rem 0.85rem #151515;
+}
+
+.luna-logo,
+.luna-pass {
+    font-weight: 900;
+    letter-spacing: -0.12em;
+    line-height: 0.8;
+}
+
+.luna-logo {
+    font-size: clamp(2.4rem, 5vw, 5rem);
+}
+.luna-logo span {
+    color: #ff5ea8;
+}
+.luna-pass {
+    position: absolute;
+    right: 11%;
+    top: 39%;
+    font-size: clamp(4.8rem, 10vw, 10rem);
+    color: #fff8ed;
+    text-shadow: 0.5rem 0.5rem #151515;
+}
+.luna-art p {
+    position: absolute;
+    bottom: 2rem;
+    left: clamp(1.5rem, 4vw, 4rem);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+}
+
+.luna-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(2rem, 7vw, 7rem);
+    background:
+        repeating-linear-gradient(0deg, rgb(21 21 21 / 0.025) 0 1px, transparent 1px 4px), #fff8ed;
+}
+
+.luna-copy {
+    margin-bottom: 2.25rem;
+}
+.luna-copy p {
+    margin: 0 0 0.6rem;
+    color: #ff3f93;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    font-size: 0.72rem;
+}
+.luna-copy h1 {
+    margin: 0;
+    font-size: clamp(1.75rem, 3vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -0.07em;
+}
+.luna-copy span {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.luna-stage {
+    width: min(100%, 34rem);
+}
+
+.luna-loading {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    background: rgb(255 248 237 / 0.82);
+}
+
+@media (width <= 48rem) {
+    .luna-shell {
+        grid-template-columns: 1fr;
+    }
+    .luna-art {
+        min-height: 14rem;
+    }
+    .luna-pass {
+        top: 40%;
+        right: 10%;
+    }
+    .luna-content {
+        justify-content: flex-start;
+        padding: 2rem 1.5rem 3rem;
+    }
+}

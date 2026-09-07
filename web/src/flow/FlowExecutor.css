@@ -7,6 +7,19 @@
     min-height: 100dvh;
 }
 
+.pf-c-login__main.luna-flow {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: none;
+    box-shadow: none !important;
+}
+
+.luna-flow .pf-c-login__main-header,
+.luna-flow + footer,
+.pf-c-login:has(.luna-flow) > [part="locale-select"] {
+    display: none;
+}
+
 ak-flow-inspector-button {
     position: absolute;
     inset-inline-end: var(--pf-global--spacer--md);

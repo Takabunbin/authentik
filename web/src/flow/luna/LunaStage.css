@@ -1,0 +1,37 @@
+:host-context(ak-luna-flow-shell) {
+    display: block;
+}
+:host-context(ak-luna-flow-shell) .pf-c-form__group {
+    margin-bottom: 1.1rem;
+}
+:host-context(ak-luna-flow-shell) .pf-c-form__label {
+    color: #151515;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+:host-context(ak-luna-flow-shell) .pf-c-form-control {
+    min-height: 3.25rem;
+    border: 2px solid #151515;
+    border-radius: 0;
+    box-shadow: 0.3rem 0.3rem #151515;
+    background: #fffdf8;
+    color: #151515;
+}
+:host-context(ak-luna-flow-shell) .pf-c-button {
+    min-height: 3.25rem;
+    border: 2px solid #151515;
+    border-radius: 0;
+    box-shadow: 0.3rem 0.3rem #151515;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+:host-context(ak-luna-flow-shell) .pf-c-button:active {
+    box-shadow: none;
+    transform: translate(0.3rem, 0.3rem);
+}
+:host-context(ak-luna-flow-shell) .pf-c-alert {
+    border: 2px solid #151515;
+    border-radius: 0;
+}

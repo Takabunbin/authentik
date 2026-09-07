@@ -2,6 +2,7 @@ import "#flow/components/ak-flow-card";
 
 import { SlottedTemplateResult } from "#elements/types";
 
+import LunaStageStyles from "#flow/luna/LunaStage.css" with { type: "bundled-text" };
 import { BaseStage } from "#flow/stages/base";
 import {
     multiTabOrchestrateLeave,
@@ -32,6 +33,7 @@ export class RedirectStage extends BaseStage<RedirectChallenge, FlowChallengeRes
         PFButton,
         PFFormControl,
         PFTitle,
+        LunaStageStyles,
         css`
             code {
                 word-break: break-all;

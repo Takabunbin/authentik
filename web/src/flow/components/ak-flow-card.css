@@ -4,3 +4,11 @@
     margin-block-start: 1.25rem;
     margin-block-end: calc(-0.75 * var(--pf-c-login__main-footer--PaddingBottom));
 }
+
+:host-context(ak-luna-flow-shell) .pf-c-login__main-header {
+    display: none;
+}
+
+:host-context(ak-luna-flow-shell) .pf-c-login__main-body {
+    padding: 0;
+}

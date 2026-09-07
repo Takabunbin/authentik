@@ -7,6 +7,7 @@ import { SlottedTemplateResult } from "#elements/types";
 import { AKFormErrors } from "#components/ak-field-errors";
 import { AKLabel } from "#components/ak-label";
 
+import LunaStageStyles from "#flow/luna/LunaStage.css" with { type: "bundled-text" };
 import { BaseStage } from "#flow/stages/base";
 import { LocalePrompt } from "#flow/stages/prompt/components/locale";
 
@@ -55,6 +56,7 @@ export class PromptStage extends WithCapabilitiesConfig(
         PFTitle,
         PFButton,
         PFCheck,
+        LunaStageStyles,
         css`
             textarea {
                 min-height: 4em;

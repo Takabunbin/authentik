@@ -3,6 +3,7 @@ import "#elements/locale/ak-locale-select";
 import "#flow/components/ak-brand-footer";
 import "#flow/components/ak-flow-card";
 import "#flow/inspector/FlowInspectorButton";
+import "#flow/luna/LunaFlowShell";
 import "#flow/tabs/broadcast";
 
 import { FlowIframeMessageController } from "./controllers/FlowIframeMessageController";
@@ -421,6 +422,12 @@ export class FlowExecutor extends WithBrandConfig(Interface) implements StageHos
 
     protected override render(): SlottedTemplateResult {
         const { challenge, loading } = this;
+        const lunaInviteFlow = this.flowSlug === "user-invite-registration";
+        const stage = guard([challenge], () => {
+            return challenge?.component
+                ? until(this.renderChallenge(challenge))
+                : this.renderLoading();
+        });
 
         return html`<div class="pf-c-login" data-layout=${this.layout} part="login">
             <ak-locale-select
@@ -434,7 +441,7 @@ export class FlowExecutor extends WithBrandConfig(Interface) implements StageHos
             </header>
             <main
                 data-layout=${this.layout}
-                class="pf-c-login__main"
+                class="pf-c-login__main ${lunaInviteFlow ? "luna-flow" : ""}"
                 aria-label=${msg("Authentication form")}
                 part="main"
             >
@@ -447,12 +454,11 @@ export class FlowExecutor extends WithBrandConfig(Interface) implements StageHos
                         themedUrls: this.brandingLogoThemedUrls,
                     })}
                 </div>
-                ${loading && challenge ? html`<ak-loading-overlay></ak-loading-overlay>` : nothing}
-                ${guard([challenge], () => {
-                    return challenge?.component
-                        ? until(this.renderChallenge(challenge))
-                        : this.renderLoading();
-                })}
+                ${lunaInviteFlow
+                    ? html`<ak-luna-flow-shell .loading=${loading}>${stage}</ak-luna-flow-shell>`
+                    : html`${loading && challenge
+                          ? html`<ak-loading-overlay></ak-loading-overlay>`
+                          : nothing}${stage}`}
             </main>
             ${this.renderFooter()}
         </div>`;

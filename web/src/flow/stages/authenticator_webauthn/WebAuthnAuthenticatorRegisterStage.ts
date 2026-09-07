@@ -12,6 +12,7 @@ import {
 } from "#common/helpers/webauthn";
 
 import { FlowUserDetails } from "#flow/FormStatic";
+import LunaStageStyles from "#flow/luna/LunaStage.css" with { type: "bundled-text" };
 import { BaseStage } from "#flow/stages/base";
 
 import {
@@ -38,7 +39,14 @@ export class WebAuthnAuthenticatorRegisterStage extends BaseStage<
     AuthenticatorWebAuthnChallenge,
     AuthenticatorWebAuthnChallengeResponseRequest
 > {
-    static styles: CSSResult[] = [PFLogin, PFFormControl, PFForm, PFTitle, PFButton];
+    static styles: CSSResult[] = [
+        PFLogin,
+        PFFormControl,
+        PFForm,
+        PFTitle,
+        PFButton,
+        LunaStageStyles,
+    ];
 
     @property({ type: Boolean })
     public registerRunning = false;

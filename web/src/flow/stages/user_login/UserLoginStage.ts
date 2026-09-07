@@ -2,6 +2,7 @@ import "#flow/FormStatic";
 import "#flow/components/ak-flow-card";
 
 import { FlowUserDetails } from "#flow/FormStatic";
+import LunaStageStyles from "#flow/luna/LunaStage.css" with { type: "bundled-text" };
 import { BaseStage } from "#flow/stages/base";
 
 import { UserLoginChallenge, UserLoginChallengeResponseRequest } from "@goauthentik/api";
@@ -22,7 +23,15 @@ export class PasswordStage extends BaseStage<
     UserLoginChallenge,
     UserLoginChallengeResponseRequest
 > {
-    static styles: CSSResult[] = [PFLogin, PFForm, PFFormControl, PFSpacing, PFButton, PFTitle];
+    static styles: CSSResult[] = [
+        PFLogin,
+        PFForm,
+        PFFormControl,
+        PFSpacing,
+        PFButton,
+        PFTitle,
+        LunaStageStyles,
+    ];
 
     render(): TemplateResult {
         return html`<ak-flow-card .challenge=${this.challenge}>

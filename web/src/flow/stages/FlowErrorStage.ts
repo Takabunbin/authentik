@@ -4,6 +4,7 @@ import "#flow/components/ak-flow-card";
 
 import { SlottedTemplateResult } from "#elements/types";
 
+import LunaStageStyles from "#flow/luna/LunaStage.css" with { type: "bundled-text" };
 import { BaseStage } from "#flow/stages/base";
 
 import { FlowChallengeResponseRequest, FlowErrorChallenge } from "@goauthentik/api";
@@ -24,6 +25,7 @@ export class FlowErrorStage extends BaseStage<FlowErrorChallenge, FlowChallengeR
         PFForm,
         PFFormControl,
         PFTitle,
+        LunaStageStyles,
         css`
             pre {
                 overflow-x: scroll;
