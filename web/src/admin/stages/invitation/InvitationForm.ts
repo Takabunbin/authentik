@@ -189,6 +189,7 @@ export class InvitationForm extends ModelForm<Invitation, string> {
                     ${ref(this.flowSearchRef)}
                     required
                     flowType=${FlowDesignationEnum.Enrollment}
+                    defaultFlowSlug="user-invite-registration"
                     .currentFlow=${this.instance?.flow}
                     action-label=${msg("Create a new enrollment flow with invitation stage...")}
                     @ak-search-select-action=${this.openNewEnrollmentFlowModal}
